@@ -30,9 +30,9 @@ stages:
     - bash: ls -R $(Build.ArtifactStagingDirectory)
     - task: CopyFiles@2
       inputs:
-        SourceFolder: '$(Build.DefaultWorkingDirectory)'
+        SourceFolder: '$(System.DefaultWorkingDirectory)'
         Contents: |
-          **/*.yml
+          **/*.yaml
           **/*.tf
         TargetFolder: '$(Build.ArtifactStagingDirectory)'
     - bash: ls -R $(Build.ArtifactStagingDirectory)
